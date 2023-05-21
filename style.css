@@ -1,7 +1,11 @@
 @import url('https://fonts.cdnfonts.com/css/uk-number-plate');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
 
-body, #addBtn, #showAllBtn, #towns {
+body,
+#addBtn,
+#showAllBtn,
+#towns,
+#clearBtn {
     font-family: 'Inter', sans-serif;
 }
 
@@ -13,10 +17,10 @@ ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
-}    
+}
 
 li {
-    width: 176px; 
+    width: 176px;
     margin-top: -1px;
     position: relative;
     border: 5px solid black;
@@ -27,7 +31,7 @@ li {
     padding-right: 14px;
     font-family: 'UKNumberPlate', sans-serif;
     background-color: white;
-                                                
+
 }
 
 li span {
@@ -78,7 +82,7 @@ li:hover span {
     padding: 20px;
     border: 1px solid #74beff;
     border-radius: 5px;
-    margin: 16px auto 0;
+    margin: 28px auto 24px;
 }
 
 .hidden {
@@ -89,19 +93,27 @@ li:hover span {
     background-color: white;
     position: absolute;
     width: 600px;
-    border: 1px solid black;
+    border: 1px solid #74beff;
     top: 25%;
-    left: 25%;
+    left: 30%;
     min-height: 450px;
     z-index: 2;
     border-radius: 5px;
 }
 
 .modal h3 {
-    border-bottom: 1px solid black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #74beff;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0;
+    padding-top: 10px;
     padding-bottom: 10px;
+    background-color: #d7ecfe;
+}
+
+.modal span {
+    cursor: pointer;
 }
 
 .modal p {
@@ -116,6 +128,7 @@ li:hover span {
     0% {
         opacity: 1;
     }
+
     100% {
         opacity: 0;
     }
@@ -124,22 +137,23 @@ li:hover span {
 .container {
     margin: 0 auto;
     width: 75%;
-    border: 1px solid black;
+    border: 1px solid #74beff;
     border-radius: 5px;
 }
 
 h1 {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #74beff;
     text-align: center;
     margin: 0;
     padding: 10px 0;
+    background-color: #d7ecfe;
 }
 
 .displayArea {
     height: 345px;
     background-color: #d7ecfe;
     width: 90%;
-    margin: 16px auto 16px;
+    margin: 22px auto 28px;
     border-radius: 5px;
     border: 1px solid #74beff;
     padding: 20px 20px 20px 16px;
@@ -165,6 +179,7 @@ h3 span {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -181,4 +196,63 @@ h3 span {
     background: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(3px);
     z-index: 1;
-  }
+}
+
+.errorOrInfoDisplay {
+    width: 90%;
+    border-radius: 5px;
+    margin: 0 auto 0;
+    padding: 20px;
+
+}
+
+.errorStyle {
+    background-color: #f8d7da;
+    border: 1px solid #af6b77;
+    color: #af6b77;
+}
+
+.successStyle {
+    background-color: #d1e7dd;
+    border: 1px solid #568789;
+    color: #568789;
+}
+
+.infoStyle {
+    background-color: #cff4fc;
+    border: 1px solid #69c2f2;
+    color: #69c2f2;
+}
+
+#clearBtn {
+    font-size: 22px;
+    margin-left: 8px;
+}
+
+.displayArea p {
+    font-size: 28px;
+    color: #c0c0c0;
+    text-align: center;
+}
+
+.displayArea p:first-child {
+    margin-top: 90px;
+}
+
+.modal div p {
+    text-align: left;
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+
+.modal div p:last-child:hover {
+    text-decoration: underline;
+    text-align: center;
+}
+
+.modal div p:last-child {
+    margin-left: 0;
+    text-align: center;
+    cursor: pointer;
+}

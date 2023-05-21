@@ -11,31 +11,50 @@
 
 <body>
     <div class="container">
-    <h1>Registration Numbers</h1>
-    <div class="menu">
-        <input type="text" name="" id="">
-        <button id="addBtn">Add</button>
-        <label for="">Filter:</label>
-        <select name="" id="towns">
-            <option value="">Select a town</option>
-            <option value="cape-town">Cape Town</option>
-            <option value="paarl">Paarl</option>
-            <option value="george">George</option>
-            <option value="stellenbosch">Stellenbosch</option>
-        </select>
-        <button id="showAllBtn">Show All</button>
-    </div>
-    <div class="displayArea">
-        <p></p>
-        <ul></ul>
-    </div>
-    <section class="modal hidden modalFadeIn">
-        <div>
-            <h3>Welcome to the Registration Numbers App!<span>x</span></h3>
-            <p>Here are a few basic features</p>
+        <h1>Registration Numbers</h1>
+        <div class="menu">
+            <input type="text" name="" id="">
+            <button id="addBtn">Add</button>
+            <label for="">Filter:</label>
+            <select name="" id="towns">
+                <option value="default">Select a town</option>
+                <option value="cape-town">Cape Town (CA)</option>
+                <option value="paarl">Paarl (CJ)</option>
+                <option value="george">George (CAW)</option>
+                <option value="stellenbosch">Stellenbosch (CL)</option>
+            </select>
+            <button id="showAllBtn">Show All</button>
+            <button id="clearBtn">Clear Data</button>
         </div>
-    </section>
-    <div class="overlay hidden"></div>
+        <div class="errorOrInfoDisplay hidden">
+        </div>
+        <div class="displayArea">
+            <div class="areaMsg">
+                <p>Why so empty !?? 🧐</p>
+                <p> Add some registration numbers to get started</p>
+            </div>
+            <ul></ul>
+        </div>
+        <section class="modal hidden modalFadeIn">
+            <div>
+                <h3>Welcome to the Registration Numbers App!<span>x</span></h3>
+                <p>Let me introduce you to some of the basic features available to use:</p>
+                <p>* You can add a registration number plate by entering a valid registration number</p>
+                <p>* Valid registration numbers are in the format of: 2 alphabet characters, followed by a space, and
+                    3-5 numbers afterwards</p>
+                <p>* There are notifications for any user mistakes or errors you may make</p>
+                <p>* You have the ability to filter results by area using the drop down menu</p>
+                <p>* After filtering click the Show All button to show all registration numbers</p>
+                <p>* Registration numbers may be deleted individually by hovering over the individual number and
+                    clicking the close button </p>
+                <p>* The app supports local storage. The registration numbers are automatically saved and available upon
+                    refresh</p>
+                <p>* There is a limit imposed of 15 registration numbers that can be added at a time to accomodate the
+                    space available to display them</p>
+                <p>Do not show Welcome message again upon page reload</p>
+            </div>
+        </section>
+        <div class="overlay hidden"></div>
     </div>
     <script src="registration-numbers.js"></script>
 </body>
