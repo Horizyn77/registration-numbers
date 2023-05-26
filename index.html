@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,16 +16,20 @@
         <div class="menu">
             <input type="text" name="" id="">
             <button id="addBtn">Add</button>
-            <label for="">Filter:</label>
-            <select name="" id="towns">
-                <option value="default">Select a town</option>
-                <option value="cape-town">Cape Town (CA)</option>
-                <option value="paarl">Paarl (CJ)</option>
-                <option value="george">George (CAW)</option>
-                <option value="stellenbosch">Stellenbosch (CL)</option>
-            </select>
+            <div class="filter-section">
+                <label for="">Filter:</label>
+                <select name="" id="towns">
+                    <option value="default">Select a town</option>
+                    <option value="cape-town">Cape Town (CA)</option>
+                    <option value="paarl">Paarl (CJ)</option>
+                    <option value="george">George (CAW)</option>
+                    <option value="stellenbosch">Stellenbosch (CL)</option>
+                    <option value="bellville">Bellville (CY)</option>
+                </select>
+            </div>
             <button id="showAllBtn">Show All</button>
             <button id="clearBtn">Clear Data</button>
+            <button id="aboutBtn">About</button>
         </div>
         <div class="errorOrInfoDisplay hidden">
         </div>
@@ -36,22 +41,23 @@
             <ul></ul>
         </div>
         <section class="modal hidden modalFadeIn">
+            <h3>Welcome to the Registration Numbers App!<span>x</span></h3>
             <div>
-                <h3>Welcome to the Registration Numbers App!<span>x</span></h3>
-                <p>Let me introduce you to some of the basic features available to use:</p>
-                <p>* You can add a registration number plate by entering a valid registration number</p>
-                <p>* Valid registration numbers are in the format of: 2 alphabet characters, followed by a space, and
-                    3-5 numbers afterwards</p>
-                <p>* There are notifications for any user mistakes or errors you may make</p>
-                <p>* You have the ability to filter results by area using the drop down menu</p>
-                <p>* After filtering click the Show All button to show all registration numbers</p>
-                <p>* Registration numbers may be deleted individually by hovering over the individual number and
-                    clicking the close button </p>
-                <p>* The app supports local storage. The registration numbers are automatically saved and available upon
-                    refresh</p>
-                <p>* There is a limit imposed of 15 registration numbers that can be added at a time to accomodate the
-                    space available to display them</p>
-                <p>Do not show Welcome message again upon page reload</p>
+                <p><strong>Let me introduce you to some of the basic features available to use:</strong></p>
+                <p><strong>*</strong> You can add a registration number plate by entering a valid registration number
+                <p><strong>*</strong> The following areas are supported: Cape Town (CA), Paarl (CJ), George (CAW),
+                    Stellenbosch (CL) and Bellvile (CY)</p>
+                <p><strong>*</strong> Valid registration numbers are in the format of: 2 capital alphabet characters,
+                    followed by a space, and 3-5 numbers afterwards</p>
+                <p><strong>*</strong> There are notifications for any user mistakes or errors you may make</p>
+                <p><strong>*</strong> You have the ability to filter results by area using the drop down menu</p>
+                <p><strong>*</strong> After filtering click the Show All button to show all registration numbers</p>
+                <p><strong>*</strong> Registration numbers may be deleted individually by hovering over the individual
+                    number and clicking the close button</p>
+                <p><strong>*</strong> The app supports local storage. The registration numbers are automatically saved
+                    and available upon refresh</p>
+                <p><strong>*</strong> There is a limit imposed of 15 registration numbers that can be added at a time to
+                    accomodate the space available to display them</p>
             </div>
         </section>
         <div class="overlay hidden"></div>

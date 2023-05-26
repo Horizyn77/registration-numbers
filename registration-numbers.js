@@ -11,7 +11,7 @@ const overlay = document.querySelector(".overlay");
 const errorOrInfoDisplay = document.querySelector(".errorOrInfoDisplay");
 const clearBtn = document.querySelector("#clearBtn");
 const areaMsg = document.querySelector(".areaMsg");
-const removeWelcomeMsg = document.querySelector(".modal p:last-of-type")
+const aboutBtn = document.querySelector("#aboutBtn");
 
 let regNumArr = [];
 
@@ -22,7 +22,7 @@ function registrationNumbers() {
     const regexTest = pattern.test(regInput.value);
 
     if (!regInput.value) {
-        errorOrInfoDisplay.innerText = "Please enter a registration number.";
+        errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;Please enter a registration number.";
         errorOrInfoDisplay.classList.remove("hidden");
         errorOrInfoDisplay.classList.add("errorStyle")
         setTimeout(() => {
@@ -30,7 +30,7 @@ function registrationNumbers() {
             errorOrInfoDisplay.classList.remove("errorStyle")
         }, 3000)
     } else if (!regexTest) {
-        errorOrInfoDisplay.innerText = "The registration number entered is not valid. Please follow the correct format. See guidelines here.";
+        errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;The registration number entered is not valid. Please follow the correct format. See guidelines <span id='aboutLink'>here</span>.";
         errorOrInfoDisplay.classList.remove("hidden");
         errorOrInfoDisplay.classList.add("errorStyle")
         setTimeout(() => {
@@ -38,7 +38,7 @@ function registrationNumbers() {
             errorOrInfoDisplay.classList.remove("errorStyle")
         }, 3000)
     } else if (regNumArr.includes(regInput.value)) {
-        errorOrInfoDisplay.innerText = "The registration number has already been added.";
+        errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;The registration number has already been added.";
         errorOrInfoDisplay.classList.remove("hidden");
         errorOrInfoDisplay.classList.add("errorStyle")
         setTimeout(() => {
@@ -46,7 +46,7 @@ function registrationNumbers() {
             errorOrInfoDisplay.classList.remove("errorStyle")
         }, 3000)
     } else if (regNumArr.length > 14) {
-        errorOrInfoDisplay.innerText = "The limit of registration numbers that can be added has been reached.";
+        errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;The limit of registration numbers that can be added has been reached.";
         errorOrInfoDisplay.classList.remove("hidden");
         errorOrInfoDisplay.classList.add("errorStyle")
         setTimeout(() => {
@@ -73,18 +73,18 @@ function registrationNumbers() {
                 numbersList.insertBefore(li, numbersList.firstElementChild)
             }
         })
-        errorOrInfoDisplay.innerText = "The registration number has been added successfully.";
+        errorOrInfoDisplay.innerHTML = "<i class='bi-check-circle-fill'></i>&nbsp;&nbsp;The registration number has been added successfully.";
         errorOrInfoDisplay.classList.remove("hidden");
         errorOrInfoDisplay.classList.add("successStyle")
         setTimeout(() => {
             errorOrInfoDisplay.classList.add("hidden")
             errorOrInfoDisplay.classList.remove("successStyle")
-        }, 3000)
+        }, 2000)
     }
 }
 
-function townsFiltered(e) {
-    e.preventDefault();
+function townsFiltered() {
+    
     if (townsSelect.value === "cape-town") {
 
 
@@ -95,13 +95,13 @@ function townsFiltered(e) {
         let capeTownFiltered = regNumArr.filter((item) => item.toLowerCase().substring(0, 2) === "ca" && item.toLowerCase().charAt(2) !== "w");
 
         if (capeTownFiltered.length === 0) {
-            errorOrInfoDisplay.innerText = "There are currently no registration numbers for Cape Town.";
+            errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;There are currently no registration numbers for Cape Town.";
             errorOrInfoDisplay.classList.remove("hidden");
             errorOrInfoDisplay.classList.add("errorStyle")
             setTimeout(() => {
                 errorOrInfoDisplay.classList.add("hidden")
                 errorOrInfoDisplay.classList.remove("errorStyle")
-            }, 3000)
+            }, 2000)
         }
 
         capeTownFiltered.forEach((item) => {
@@ -122,13 +122,13 @@ function townsFiltered(e) {
         let paarlFiltered = regNumArr.filter((item) => item.toLowerCase().startsWith("cj"))
 
         if (paarlFiltered.length === 0) {
-            errorOrInfoDisplay.innerText = "There are currently no registration numbers for Paarl.";
+            errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;There are currently no registration numbers for Paarl.";
             errorOrInfoDisplay.classList.remove("hidden");
             errorOrInfoDisplay.classList.add("errorStyle")
             setTimeout(() => {
                 errorOrInfoDisplay.classList.add("hidden")
                 errorOrInfoDisplay.classList.remove("errorStyle")
-            }, 3000)
+            }, 2000)
         }
 
         paarlFiltered.forEach((item) => {
@@ -148,13 +148,13 @@ function townsFiltered(e) {
         let georgeFiltered = regNumArr.filter((item) => item.toLowerCase().startsWith("caw"))
 
         if (georgeFiltered.length === 0) {
-            errorOrInfoDisplay.innerText = "There are currently no registration numbers for George.";
+            errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;There are currently no registration numbers for George.";
             errorOrInfoDisplay.classList.remove("hidden");
             errorOrInfoDisplay.classList.add("errorStyle")
             setTimeout(() => {
                 errorOrInfoDisplay.classList.add("hidden")
                 errorOrInfoDisplay.classList.remove("errorStyle")
-            }, 3000)
+            }, 2000)
         }
 
         georgeFiltered.forEach((item) => {
@@ -174,15 +174,40 @@ function townsFiltered(e) {
         let stellenboschFiltered = regNumArr.filter((item) => item.toLowerCase().startsWith("cl"))
 
         if (stellenboschFiltered.length === 0) {
-            errorOrInfoDisplay.innerText = "There are currently no registration numbers for Stellenbosch.";
+            errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;There are currently no registration numbers for Stellenbosch.";
             errorOrInfoDisplay.classList.remove("hidden");
             errorOrInfoDisplay.classList.add("errorStyle")
             setTimeout(() => {
                 errorOrInfoDisplay.classList.add("hidden")
                 errorOrInfoDisplay.classList.remove("errorStyle")
-            }, 3000)
+            }, 2000)
         }
         stellenboschFiltered.forEach((item) => {
+            const li = document.createElement("li")
+            li.innerHTML = `${item}<span>x</span>`;
+            if (!numbersList.firstElementChild) {
+                numbersList.append(li);
+            } else {
+                numbersList.insertBefore(li, numbersList.firstElementChild)
+            }
+        })
+    } else if (townsSelect.value === "bellville") {
+        while (numbersList.firstElementChild) {
+            numbersList.removeChild(numbersList.firstElementChild)
+        }
+
+        let bellvilleFiltered = regNumArr.filter((item) => item.toLowerCase().startsWith("cy"))
+
+        if (bellvilleFiltered.length === 0) {
+            errorOrInfoDisplay.innerHTML = "<i class='bi-exclamation-octagon-fill'></i>&nbsp;&nbsp;There are currently no registration numbers for Bellville.";
+            errorOrInfoDisplay.classList.remove("hidden");
+            errorOrInfoDisplay.classList.add("errorStyle")
+            setTimeout(() => {
+                errorOrInfoDisplay.classList.add("hidden")
+                errorOrInfoDisplay.classList.remove("errorStyle")
+            }, 2000)
+        }
+        bellvilleFiltered.forEach((item) => {
             const li = document.createElement("li")
             li.innerHTML = `${item}<span>x</span>`;
             if (!numbersList.firstElementChild) {
@@ -225,7 +250,7 @@ function deleteRegNum(e) {
             e.target.parentElement.remove();
         })
 
-        errorOrInfoDisplay.innerText = "The registration number has been removed successfully.";
+        errorOrInfoDisplay.innerHTML = "<i class='bi-check-circle-fill'></i>&nbsp;&nbsp;The registration number has been removed successfully.";
         errorOrInfoDisplay.classList.remove("hidden");
         errorOrInfoDisplay.classList.add("successStyle")
         setTimeout(() => {
@@ -257,7 +282,7 @@ if (localStorage['regNums']) {
 
 function clearData() {
     if (regNumArr.length > 0) {
-        errorOrInfoDisplay.innerText = "All your data has been successfully cleared";
+        errorOrInfoDisplay.innerHTML = "<i class='bi-check-circle-fill'></i>&nbsp;&nbsp;All your data has been successfully cleared";
         errorOrInfoDisplay.classList.remove("hidden");
         errorOrInfoDisplay.classList.add("successStyle")
         setTimeout(() => {
@@ -273,12 +298,7 @@ function clearData() {
         numbersList.removeChild(numbersList.firstElementChild)
     }
 
-
     areaMsg.classList.remove("hidden");
-}
-
-if (!localStorage["firstPageLoad"]) {
-    localStorage["firstPageLoad"] = "true";
 }
 
 if (regNumArr.length === 0) {
@@ -290,18 +310,36 @@ function modalLoad() {
     overlay.classList.remove("hidden");
 }
 
+if (townsSelect.selected) {
+    townsSelect.style.border = "1px solid #4daafa";
+}
+
 addBtn.addEventListener("click", registrationNumbers)
 townsSelect.addEventListener("change", townsFiltered)
 showAllBtn.addEventListener("click", showAll)
 numbersList.addEventListener("click", deleteRegNum)
 clearBtn.addEventListener("click", clearData)
-window.addEventListener("load", () => {
-    if (localStorage["firstPageLoad"] === "true") {
+aboutBtn.addEventListener("click", () => { 
+    modalLoad();
+    removeWelcomeMsg.style.visibility = "hidden";
+})
+errorOrInfoDisplay.addEventListener("click", (e) => {
+    if (e.target.matches("#aboutLink")) {
         modalLoad();
+        removeWelcomeMsg.style.visibility = "hidden";
     }
 })
-removeWelcomeMsg.addEventListener("click", () => localStorage["firstPageLoad"] = "false")
+
+if (!localStorage["firstPageLoad"]) {
+    window.addEventListener("load", () => modalLoad())
+    localStorage["firstPageLoad"] = "true";
+}
+
 modalCloseBtn.addEventListener("click", () => {
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden")
+})
+overlay.addEventListener("click", () => {
     modal.classList.add("hidden");
     overlay.classList.add("hidden")
 })

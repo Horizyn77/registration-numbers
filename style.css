@@ -5,8 +5,34 @@ body,
 #addBtn,
 #showAllBtn,
 #towns,
-#clearBtn {
+#clearBtn,
+#aboutBtn {
     font-family: 'Inter', sans-serif;
+}
+
+#addBtn,
+#showAllBtn,
+#clearBtn,
+#towns,
+.menu input,
+#aboutBtn {
+    border: 1px solid #74beff;
+    border-radius: 5px;
+}
+
+#addBtn:hover,
+#showAllBtn:hover,
+#clearBtn:hover,
+#aboutBtn:hover {
+    background-color: #4daafa;
+    color: #E2DFD2;
+}
+
+#addBtn:active,
+#showAllBtn:active,
+#clearBtn:active,
+#aboutBtn:active {
+    transform: translateY(2px);
 }
 
 body {
@@ -17,6 +43,9 @@ ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 li {
@@ -66,6 +95,11 @@ input {
 
 #showAllBtn {
     font-size: 22px;
+    margin-right: 8px;
+}
+
+#aboutBtn {
+    font-size: 22px;
 }
 
 label {
@@ -79,7 +113,7 @@ li:hover span {
 .menu {
     background-color: #d7ecfe;
     width: 90%;
-    padding: 20px;
+    padding: 20px 20px 20px 15px;
     border: 1px solid #74beff;
     border-radius: 5px;
     margin: 28px auto 24px;
@@ -94,11 +128,12 @@ li:hover span {
     position: absolute;
     width: 600px;
     border: 1px solid #74beff;
-    top: 25%;
-    left: 30%;
-    min-height: 450px;
+    top: 50%;
+    left: 50%;
     z-index: 2;
     border-radius: 5px;
+    transform: translate(-50%, -39%);
+    margin: 0;
 }
 
 .modal h3 {
@@ -134,9 +169,23 @@ li:hover span {
     }
 }
 
+.messageFadeOut {
+    animation: fadeOut ease 4s;
+}
+
+@keyframes messagefadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
 .container {
     margin: 0 auto;
-    width: 75%;
+    width: 78%;
     border: 1px solid #74beff;
     border-radius: 5px;
 }
@@ -150,20 +199,12 @@ h1 {
 }
 
 .displayArea {
-    height: 345px;
     background-color: #d7ecfe;
     width: 90%;
     margin: 22px auto 28px;
     border-radius: 5px;
     border: 1px solid #74beff;
-    padding: 20px 20px 20px 16px;
-}
-
-ul {
-    height: 400px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    padding: 20px 20px 20px 15px;
 }
 
 h3 span {
@@ -202,7 +243,7 @@ h3 span {
     width: 90%;
     border-radius: 5px;
     margin: 0 auto 0;
-    padding: 20px;
+    padding: 20px 20px 20px 15px;
 
 }
 
@@ -226,7 +267,7 @@ h3 span {
 
 #clearBtn {
     font-size: 22px;
-    margin-left: 8px;
+    margin-right: 8px;
 }
 
 .displayArea p {
@@ -246,13 +287,88 @@ h3 span {
     margin-bottom: 8px;
 }
 
-.modal div p:last-child:hover {
-    text-decoration: underline;
-    text-align: center;
+input:focus,
+select:focus {
+    outline: 1px solid #4daafa;
+    caret-color: #4daafa;
 }
 
-.modal div p:last-child {
-    margin-left: 0;
-    text-align: center;
+#aboutLink {
+    text-decoration: underline;
+}
+
+#aboutLink:hover {
     cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .filter-section {
+        margin-top: 14px;
+        margin-bottom: 14px;
+    }
+
+    #addBtn {
+        margin-left: 6px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .menu,
+    .displayArea,
+    .errorOrInfoDisplay {
+        width: 80%;
+    }
+
+    .modal {
+        width: 450px;
+        line-height: 1.4;
+    }
+
+    .modal div {
+        height: 360px;
+        overflow-y: scroll;
+    }
+
+    div p {
+        padding-right: 8px;
+    }
+
+    ul {
+        display: block;
+        /* min-height: 10px; */
+    }
+
+    li {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .displayArea p:first-child {
+        margin-top: 60px;
+    }
+
+    .displayArea {
+        min-height: 250px;
+    }
+
+    .modal {
+        transform: translate(-50%,-45%);
+    }
+}
+
+@media (min-width: 601px) {
+    .filter-section {
+        display: inline;
+    }
+
+    .displayArea {
+        height: 340px;
+    }
+
+    ul {
+        height: 350px;
+    }
 }
