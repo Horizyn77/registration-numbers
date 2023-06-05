@@ -321,12 +321,10 @@ numbersList.addEventListener("click", deleteRegNum)
 clearBtn.addEventListener("click", clearData)
 aboutBtn.addEventListener("click", () => { 
     modalLoad();
-    removeWelcomeMsg.style.visibility = "hidden";
 })
 errorOrInfoDisplay.addEventListener("click", (e) => {
     if (e.target.matches("#aboutLink")) {
         modalLoad();
-        removeWelcomeMsg.style.visibility = "hidden";
     }
 })
 

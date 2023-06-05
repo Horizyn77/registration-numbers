@@ -313,17 +313,17 @@ select:focus {
     }
 
     .container {
-        width: 90%;
+        width: 98%;
     }
 
     .menu,
     .displayArea,
-    .errorOrInfoDisplay {
+    .errorOrInfoDisplssay {
         width: 80%;
     }
 
     .modal {
-        width: 450px;
+        width: 90%;
         line-height: 1.4;
     }
 
