@@ -318,12 +318,12 @@ select:focus {
 
     .menu,
     .displayArea,
-    .errorOrInfoDisplssay {
+    .errorOrInfoDisplay {
         width: 80%;
     }
 
     .modal {
-        width: 90%;
+        width: 96%;
         line-height: 1.4;
     }
 
