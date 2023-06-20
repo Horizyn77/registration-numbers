@@ -17,7 +17,7 @@ let regNumArr = [];
 
 function registrationNumbers() {
 
-    const pattern = /^[A-Z]{2,3} \d{3,5}$/
+    const pattern = /^[A-Z]{2,3} (\d{3,6}|\d{3}[ -]\d{3})$/
 
     const regexTest = pattern.test(regInput.value);
 

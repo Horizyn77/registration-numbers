@@ -49,8 +49,7 @@ ul {
 }
 
 li {
-    width: 176px;
-    margin-top: -1px;
+    width: 206px;
     position: relative;
     border: 5px solid black;
     margin: 0 0 10px 10px;
@@ -60,7 +59,6 @@ li {
     padding-right: 14px;
     font-family: 'UKNumberPlate', sans-serif;
     background-color: white;
-
 }
 
 li span {
@@ -81,6 +79,7 @@ li span {
 input {
     font-size: 24px;
     width: 160px;
+    margin-right: 8px;
 }
 
 #addBtn {
@@ -293,6 +292,10 @@ select:focus {
     caret-color: #4daafa;
 }
 
+input:focus::placeholder {
+    color: transparent;
+}
+
 #aboutLink {
     text-decoration: underline;
 }
@@ -306,10 +309,6 @@ select:focus {
     .filter-section {
         margin-top: 14px;
         margin-bottom: 14px;
-    }
-
-    #addBtn {
-        margin-left: 6px;
     }
 
     .container {
@@ -338,7 +337,6 @@ select:focus {
 
     ul {
         display: block;
-        /* min-height: 10px; */
     }
 
     li {
@@ -357,6 +355,18 @@ select:focus {
     .modal {
         transform: translate(-50%,-45%);
     }
+
+    #aboutBtn {
+        margin-top: 14px;
+    }
+
+    input {
+        margin-right: 8px;
+    }
+
+    #towns {
+        margin-top: 4px;
+    }
 }
 
 @media (min-width: 601px) {
@@ -370,5 +380,21 @@ select:focus {
 
     ul {
         height: 350px;
+    }
+}
+
+@media (min-width: 360px) and (max-width: 600px) {
+    #towns {
+        margin-bottom: 4px;
+    }
+    
+    .filter-section {
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 430px) {
+    #aboutBtn {
+        margin-top: 0px;
     }
 }
