@@ -20,14 +20,6 @@ body,
     border-radius: 5px;
 }
 
-#addBtn:hover,
-#showAllBtn:hover,
-#clearBtn:hover,
-#aboutBtn:hover {
-    background-color: #4daafa;
-    color: #E2DFD2;
-}
-
 #addBtn:active,
 #showAllBtn:active,
 #clearBtn:active,
@@ -364,6 +356,14 @@ input:focus::placeholder {
     #towns {
         margin-top: 4px;
     }
+
+    #addBtn:active,
+    #showAllBtn:active,
+    #clearBtn:active,
+    #aboutBtn:active {
+        background-color: #4daafa;
+        color: #E2DFD2;
+    }
 }
 
 @media (min-width: 601px) {
@@ -384,7 +384,7 @@ input:focus::placeholder {
     #towns {
         margin-bottom: 4px;
     }
-    
+
     .filter-section {
         margin-top: 10px;
     }
@@ -393,5 +393,15 @@ input:focus::placeholder {
 @media (min-width: 430px) {
     #aboutBtn {
         margin-top: 0px;
+    }
+}
+
+@media (hover: hover) {
+    #addBtn:hover,
+    #showAllBtn:hover,
+    #clearBtn:hover,
+    #aboutBtn:hover {
+        background-color: #4daafa;
+        color: #E2DFD2;
     }
 }
