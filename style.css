@@ -37,6 +37,7 @@ body,
 
 body {
     position: relative;
+    min-height: 100vh;
 }
 
 ul {
@@ -124,14 +125,14 @@ li:hover span {
 
 .modal {
     background-color: white;
-    position: absolute;
+    position: fixed;
     width: 600px;
     border: 1px solid #74beff;
     top: 50%;
     left: 50%;
     z-index: 2;
     border-radius: 5px;
-    transform: translate(-50%, -39%);
+    transform: translate(-50%, -50%);
     margin: 0;
 }
 
@@ -350,10 +351,6 @@ input:focus::placeholder {
 
     .displayArea {
         min-height: 250px;
-    }
-
-    .modal {
-        transform: translate(-50%,-45%);
     }
 
     #aboutBtn {

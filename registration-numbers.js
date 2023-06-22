@@ -299,6 +299,7 @@ function clearData() {
     }
 
     areaMsg.classList.remove("hidden");
+    regInput.value = "";
 }
 
 if (regNumArr.length === 0) {
