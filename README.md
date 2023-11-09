@@ -16,7 +16,7 @@ Please note the app is using a free hosting account on render which has limitati
 
 ## Overview 📝<a name="overview"></a>
 
-The Registration Numbers app is an app that helps you add and store registration numbers. You can also filter and delete registration numbers.
+The Registration Numbers app is an app that helps you add and store vehicle registration numbers from the Western Cape. You can also filter and delete registration numbers.
 
 ## Features 🌟<a name="features"></a>
 
