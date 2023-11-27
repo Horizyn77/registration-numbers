@@ -35,9 +35,11 @@ You can delete an individual registration number by hovering over it and clickin
 ### Clearing all data
 You can clear all registration numbers stored in local storage by clicking the clear button
 
-
 ### Error/Success messages and validation
 There are messages for user actions and validation
+
+### Reponsive Design
+Site is responsive on mobile screens with the use of media queries
 
 ## Technologies Used 💻<a name="technologies-used"></a>
 
