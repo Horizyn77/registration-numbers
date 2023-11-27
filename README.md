@@ -38,7 +38,7 @@ You can clear all registration numbers stored in local storage by clicking the c
 ### Error/Success messages and validation
 There are messages for user actions and validation
 
-### Reponsive Design
+### Responsive Design
 Site is responsive on mobile screens with the use of media queries
 
 ## Technologies Used 💻<a name="technologies-used"></a>
