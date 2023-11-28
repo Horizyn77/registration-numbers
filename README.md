@@ -6,8 +6,6 @@ Link to app 🔗:
 
 https://horizyn77.github.io/registration-numbers/
 
-Please note the app is using a free hosting account on render which has limitations. To speed up the loading process open the site and reload it again.
-
 ## Table of contents
 
 1. [Overview](#overview)
